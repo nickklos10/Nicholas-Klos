@@ -13,7 +13,7 @@ The portfolio is built using HTML, CSS, JavaScript, and Node.js for handling for
 
 ## Technologies Used
 
-Frontend:
+Frontend: 
 - HTML5
 - CSS3 (including Boxicons for icons)
 - JavaScript (DOM Manipulation, event handling)
