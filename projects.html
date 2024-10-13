@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicholas Klos - Projects</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="anima/anima.html" class="logo">Nicholas Klos</a>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <section class="projects" id="projects">
+      <h2 class="heading">My <span>Projects</span></h2>
+      <div class="projects-container">
+        <div class="project-card" data-project="project1">
+          <h3>Adventure Battle Game</h3>
+          <p>
+            A full-stack application built with Python, Flask, HTML, CSS, and
+            JavaScript for an interactive multiplayer game
+          </p>
+        </div>
+        <div class="project-card" data-project="project2">
+          <h3>LLM Chatbot</h3>
+          <p>
+            A chatbot application that generates real-time responses via a
+            Node.js server and web interface
+          </p>
+        </div>
+        <div class="project-card" data-project="project3">
+          <h3>Emotion Detection</h3>
+          <p>
+            An AI web app for detecting emotions in text using OpenAI's
+            GPT-4o-mini model, built with Flask
+          </p>
+        </div>
+        <div class="project-card" data-project="project4">
+          <h3>Personal Portfolio</h3>
+          <p>
+            An interactive web application portfolio using HTML, CSS, and
+            JavaScript.
+          </p>
+        </div>
+        <div class="project-card" data-project="project5">
+          <h3>Weather Prediction</h3>
+          <p>
+            Machine learning project for predicting weather outcomes using
+            various classification models.
+          </p>
+        </div>
+        <div class="project-card" data-project="project6">
+          <h3>Serie A Standings Prediction</h3>
+          <p>
+            ML project involving scraping data, processing the data, and
+            building machine learning models to predict the standings for the
+            2024-2025 Serie A season.
+          </p>
+        </div>
+
+        <!-- Add more project cards as needed -->
+      </div>
+    </section>
+
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="Project Image" />
+        <p id="modal-description"></p>
+        <div id="modal-technologies"></div>
+        <a id="modal-link" href="" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <script src="projects.js"></script>
+  </body>
+</html>

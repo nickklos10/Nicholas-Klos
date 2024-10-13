@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicholas Klos</title>
+
+    <!-- Styles for Rainfall Animation -->
+    <style>
+      body {
+        background-color: black;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1; /* Ensure the canvas is below other elements */
+      }
+
+      .playground {
+        position: relative;
+        z-index: 2; /* Ensure this div is above the canvas */
+      }
+
+      #magic {
+        position: relative;
+        z-index: 2; /* Ensure this div is above the canvas */
+      }
+
+      .home-button-container {
+        position: fixed;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+      }
+
+      .home-button {
+        width: 40px; /* Adjust width to match icon size */
+        height: 40px; /* Adjust height to match icon size */
+        cursor: pointer;
+        border-radius: 50%; /* Make the button round */
+        border: none;
+        position: relative;
+        background: rgba(16, 7, 32, 0.5); /* Transparent background */
+        transition: 0.1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .home-button::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          circle farthest-corner at 10% 20%,
+          rgba(255, 94, 247, 0.7) 17.8%,
+          rgba(2, 245, 255, 0.7) 100.2%
+        );
+        filter: blur(15px);
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .home-button:active {
+        transform: scale(0.9) rotate(3deg);
+        background-image: radial-gradient(
+          circle farthest-corner at 10% 20%,
+          rgba(255, 94, 247, 1) 17.8%,
+          rgba(2, 245, 255, 1) 100.2%
+        );
+        transition: 0.5s;
+      }
+
+      .home-button:hover {
+        transform: scale(1.1); /* Slightly increase the size on hover */
+      }
+
+      .home-button:hover::after {
+        filter: blur(20px); /* Increase the glow on hover */
+      }
+
+      .home-icon {
+        width: 24px; /* Size of the icon */
+        height: 24px;
+      }
+    </style>
+
+    <!-- Styles for Three.js Scene -->
+    <link href="tab.css" rel="stylesheet" />
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+
+    <!-- Shaders -->
+    <script type="x-shader/x-vertex" id="vertexshader">
+      attribute float size;
+      attribute vec3 customColor;
+      varying vec3 vColor;
+
+      void main() {
+        vColor = customColor;
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_PointSize = size * (300.0 / -mvPosition.z);
+        gl_Position = projectionMatrix * mvPosition;
+      }
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentshader">
+      uniform vec3 color;
+      uniform sampler2D pointTexture;
+      varying vec3 vColor;
+
+      void main() {
+        gl_FragColor = vec4(color * vColor, 1.0);
+        gl_FragColor = gl_FragColor * texture2D(pointTexture, gl_PointCoord);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Home Button -->
+    <div class="home-button-container">
+      <button
+        class="home-button"
+        onclick="window.location.href='../index.html'"
+      >
+        <img src="home.png" alt="Home Icon" class="home-icon" />
+      </button>
+    </div>
+    <!-- Rainfall Animation -->
+    <canvas id="rainfall"></canvas>
+
+    <!-- Three.js Scene -->
+    <div id="magic"></div>
+    <div class="playground">
+      <div class="bottomPosition"></div>
+    </div>
+
+    <!-- Rainfall Animation Script -->
+    <script>
+      const canvas = document.getElementById("rainfall");
+      const ctx = canvas.getContext("2d");
+
+      // Set canvas size to match window size
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // Create an array to store the raindrops
+      const raindrops = [];
+
+      // Function to create a new raindrop
+      function createRaindrop() {
+        const x = Math.random() * canvas.width;
+        const y = -5;
+        const speed = Math.random() * 5 + 2;
+        const length = Math.random() * 20 + 10;
+
+        raindrops.push({ x, y, speed, length });
+      }
+
+      // Function to update the raindrops' positions
+      function updateRaindrops() {
+        for (let i = 0; i < raindrops.length; i++) {
+          const raindrop = raindrops[i];
+
+          raindrop.y += raindrop.speed;
+
+          if (raindrop.y > canvas.height) {
+            raindrops.splice(i, 1);
+            i--;
+          }
+        }
+      }
+
+      // Function to draw the raindrops
+      function drawRaindrops() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 2;
+
+        for (let i = 0; i < raindrops.length; i++) {
+          const raindrop = raindrops[i];
+
+          ctx.beginPath();
+          ctx.moveTo(raindrop.x, raindrop.y);
+          ctx.lineTo(raindrop.x, raindrop.y + raindrop.length);
+          ctx.stroke();
+        }
+      }
+
+      // Function to animate the raindrops
+      function animate() {
+        createRaindrop();
+        updateRaindrops();
+        drawRaindrops();
+
+        requestAnimationFrame(animate);
+      }
+
+      // Start the animation
+      animate();
+    </script>
+
+    <!-- Three.js Scene Script -->
+    <script src="main.js"></script>
+  </body>
+</html>

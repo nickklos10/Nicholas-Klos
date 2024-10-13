@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Nicholas Klos</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="anima/anima.html" class="logo">Nicholas Klos</a>
+
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <section id="contact" class="contact section">
+      <h2 class="heading">Contact <span>Me</span></h2>
+      <form id="contact-form" action="/contact" method="POST">
+        <div class="input-box">
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+        </div>
+        <div class="input-box">
+          <input
+            type="text"
+            name="subject"
+            placeholder="Email Subject"
+            required
+          />
+        </div>
+        <textarea
+          name="message"
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <input
+          type="hidden"
+          name="_subject"
+          value="New submission from Portfolio Contact Form"
+        />
+        <input type="text" name="_gotcha" style="display: none" />
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
