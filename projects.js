@@ -77,6 +77,24 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       link: "https://github.com/nickklos10/SerieA_Machine_Learning_Predictions_2025",
     },
+    project7: {
+      title: "Concrete Crack Detector",
+      image: "images/concretecrack.jpg",
+      description:
+        "A Flask-based web application to detect cracks in concrete using a pre-trained ResNet-18 model. The application allows users to upload images of concrete surfaces and utilizes a deep learning model to determine whether a crack is present with a high level of confidence.",
+      technologies: [
+        "Machine Learning",
+        "Jupiter Notebook",
+        "Pytorch",
+        "torchvision",
+        "flask",
+        "axios",
+        "jinja2",
+        "matplotlib",
+        "html-css-javascript",
+      ],
+      link: "https://github.com/nickklos10/Concrete-Crack-Detector-CV",
+    },
   };
 
   projectCards.forEach((card) => {
