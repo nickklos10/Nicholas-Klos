@@ -95,6 +95,23 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       link: "https://github.com/nickklos10/Concrete-Crack-Detector-CV",
     },
+    project8: {
+      title: "Three tier distributed Web App for an Enterprise system",
+      image: "images/p4.jpg",
+      description:
+        "A servlet/JSP-based multi-tiered enterprise application using a Tomcat container that allows clients, accountants and root-level users to execute SQL queries and updates with specific business logic implementation.",
+      technologies: [
+        "MySQL",
+        "Java",
+        "JDBC",
+        "JSP-servlet",
+        "Apache Tomcat",
+        "ajax",
+        "java-ee",
+        "html-css-javascript",
+      ],
+      link: "https://github.com/nickklos10/Three-Tier-Distributed-Web-Application",
+    },
   };
 
   projectCards.forEach((card) => {
