@@ -112,6 +112,22 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       link: "https://github.com/nickklos10/Three-Tier-Distributed-Web-Application",
     },
+    project9: {
+      title: "Fashion CNN Classifier",
+      image: "images/fashionmnist.jpg",
+      description:
+        "This project implements a deep learning model using Convolutional Neural Networks (CNNs) to classify the Fashion-MNIST dataset into 10 different categories of clothing and accessories. The project includes the dataset preprocessing pipeline, CNN architecture, training loop, validation performance evaluation, and visualizations of cost and accuracy over epochs.",
+      technologies: [
+        "Python",
+        "PyTorch",
+        "torchvision",
+        "matplotlib",
+        "CNN",
+        "Deep Learning",
+      ],
+      link: "https://github.com/nickklos10/fashion-mnist-cnn-classifier",
+    },
+    
   };
 
   projectCards.forEach((card) => {
