@@ -22,42 +22,30 @@
         <a href="contact.html" class="active">Contact</a>
       </nav>
     </header>
-
-    <section id="contact" class="contact section">
-      <h2 class="heading">Contact <span>Me</span></h2>
-      <form id="contact-form" action="/contact" method="POST">
-        <div class="input-box">
-          <input type="text" name="name" placeholder="Full Name" required />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          />
-        </div>
-        <div class="input-box">
-          <input
-            type="text"
-            name="subject"
-            placeholder="Email Subject"
-            required
-          />
-        </div>
-        <textarea
-          name="message"
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <input
-          type="hidden"
-          name="_subject"
-          value="New submission from Portfolio Contact Form"
-        />
-        <input type="text" name="_gotcha" style="display: none" />
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+    <div class="box">
+      <img src="images/gmail.png" class="gmail1"/>
+      <img src="images/linkedin.png" class="linkedin1"/>
+      <img src="images/gmail.png" class="gmail2"/>
+      <img src="images/linkedin.png" class="linkedin2"/>
+      <img src="images/gmail.png" class="gmail3"/>
+      <img src="images/linkedin.png" class="linkedin3"/>
+      <img src="images/gmail.png" class="gmail4"/>
+      <img src="images/linkedin.png" class="linkedin4"/>
+      <img src="images/gmail.png" class="gmail5"/>
+      <img src="images/linkedin.png" class="linkedin5"/>
+    </div>
+    
+    <section class="contact" id="contact">
+      <h2>Contact Me!</h2>
+      <p>Feel free to reach out through any of these platforms:</p>
+      <div class="contact-links">
+        <a href="mailto:nicholask39@gmail.com" class="btn">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/nicholas-klos-16438422b/" class="btn">
+          <i class="fab fa-linkedin"></i> Connect on LinkedIn
+        </a>
+      </div>
     </section>
 
     <script src="script.js"></script>
