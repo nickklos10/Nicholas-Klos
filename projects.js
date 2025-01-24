@@ -127,7 +127,14 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       link: "https://github.com/nickklos10/fashion-mnist-cnn-classifier",
     },
-    
+    project10: {
+      title: "Banking System Simulation",
+      image: "images/banking.jpg",
+      description:
+        "This project is a multithreaded banking system simulation designed to handle concurrent banking operations such as deposits, withdrawals, and transfers between accounts. The project leverages Java's multithreading and synchronization mechanisms to simulate real-world banking behavior with multiple agents interacting concurrently with shared resources. Additionally, internal and federal audits are conducted at random intervals to ensure the correctness of transactions. Transactions are logged, and any that violate defined thresholds are flagged for further analysis.",
+      technologies: ["Java", "Multithreading", "Concurrency", "OOP"],
+      link: "https://github.com/nickklos10/BankAccount-Simulation",
+    },
   };
 
   projectCards.forEach((card) => {
