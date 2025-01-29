@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link: "https://github.com/nickklos10/Adventure-Battle",
     },
     project2: {
-      title: "LLM Chatbot",
+      title: "API-Talkbot",
       image: "images/chatbot.jpg",
       description:
         "This project is a chatbot application that uses OpenAI's GPT-3.5-turbo model to generate responses to user input. The chatbot runs on a Node.js server and interacts with a front-end interface where users can input their messages.",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link: "https://github.com/nickklos10/LLM-chatbot",
     },
     project3: {
-      title: "Emotion Detection",
+      title: "AI Emotion Analyzer",
       image: "images/ed.jpg",
       description:
         "This is a web application that detects emotions in text using OpenAI's GPT-4o-mini model. The app is built with Flask for the backend and HTML/CSS/JavaScript for the frontend. It allows users to input text, analyzes the sentiment, and returns the likelihood of each emotion as a percentage.",
